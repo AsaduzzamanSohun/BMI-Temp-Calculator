@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/ui_bg"
+    android:gravity="center_horizontal"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/app_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculator"
+        android:layout_marginTop="30dp"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        />
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:cardCornerRadius="15dp"
+        android:layout_margin="15dp"
+        app:cardElevation="15dp">
+
+        <TextView
+            android:id="@+id/tvDisplay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="24sp"
+            android:lineHeight="32sp"
+            android:layout_gravity="center"
+            android:textStyle="bold"
+            android:padding="10dp"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/ed_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="30dp"
+        android:text="Weight"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/ed_weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="17"
+        android:inputType="numberDecimal|numberSigned"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+        android:hint="Enter your weight"
+        android:layout_marginTop="15dp"/>
+
+    <EditText
+        android:id="@+id/ed_temp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="17"
+        android:inputType="numberDecimal|numberSigned"
+        style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+        android:hint="Enter a number"
+        android:visibility="gone"
+        android:layout_marginTop="15dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="start"
+        android:layout_marginStart="30sp"
+        android:layout_marginTop="30dp"
+        android:text="Height"
+        android:textStyle="bold"
+        android:textSize="18sp" />
+
+
+    <LinearLayout
+        android:id="@+id/ed_text_grp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <EditText
+            android:id="@+id/ed_feet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="17"
+            android:layout_weight="1"
+            android:inputType="numberDecimal|numberSigned"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+            android:layout_marginStart="30dp"
+            android:hint="Feet"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/ed_inches"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="17"
+            android:layout_weight="1"
+            android:inputType="numberDecimal|numberSigned"
+            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
+            android:layout_marginStart="7dp"
+            android:layout_marginEnd="30dp"
+            android:hint="Inches"
+            android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/bmi_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reset_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Reset"
+            android:textAllCaps="false"
+
+            android:background="@drawable/btn_bg_1"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/calculate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Calculate"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_bg_2"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/temp_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:visibility="gone"
+        >
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/celsius_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Celsius"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_bg_1"
+            android:layout_marginEnd="15dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="15dp"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/fahrenheit_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Fahrenheit"
+            android:textAllCaps="false"
+            android:background="@drawable/btn_bg_2"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="15dp"/>
+
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/temp_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Temperature"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_bg_3"
+        android:layout_margin="30dp"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/bmi_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="BMI Calculation"
+        android:textAllCaps="false"
+        android:background="@drawable/btn_bg_3"
+        android:layout_margin="30dp"
+        android:visibility="gone"
+        />
+
+
+
+
+
+</LinearLayout>
